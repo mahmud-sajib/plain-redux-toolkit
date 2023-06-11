@@ -1,5 +1,5 @@
 // Importing the createSlice function
-const createSlice = require("@reduxjs/toolkit");
+const { createSlice } = require("@reduxjs/toolkit");
 
 // Initial state for the counter
 const initialState = {
