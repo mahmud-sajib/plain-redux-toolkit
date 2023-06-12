@@ -3,6 +3,7 @@ const { configureStore } = require("@reduxjs/toolkit");
 // importing slices
 const counterReducer = require("../features/counter/counterSlice");
 const keeperReducer = require("../features/keeper/keeperSlice");
+const postReducer = require("../features/post/postSlice");
 
 // importing logger from redux-logger middleware
 const { default: logger } = require("redux-logger");
@@ -12,6 +13,7 @@ const store = configureStore({
   reducer: {
     counter: counterReducer, // Assigning the counterReducer to the "counter" slice of the store
     keeper: keeperReducer, // Assigning the keeperReducer to the "keeper" slice of the store
+    post: postReducer,
   },
   // getDefaultMiddlewares() is redux's own middleware.
   // We need to return it first & concat our own middleware to use it
