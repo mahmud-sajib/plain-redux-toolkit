@@ -11,13 +11,4 @@ store.subscribe(() => {
 });
 
 // disptach counter actions
-store.dispatch(counterActions.increment());
-
-store.dispatch(counterActions.increment());
-
 store.dispatch(counterActions.decrement());
-
-// disptach keeper actions
-store.dispatch(keeperActions.increment(10));
-
-store.dispatch(keeperActions.decrement(5));

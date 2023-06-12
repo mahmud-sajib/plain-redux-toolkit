@@ -1,5 +1,6 @@
 // Importing the createSlice function
 const { createSlice } = require("@reduxjs/toolkit");
+const { counterActions } = require("../counter/counterSlice");
 
 // Initial state for the counter
 const initialState = {
@@ -18,13 +19,21 @@ const keeperSlice = createSlice({
   reducers: {
     // Reducer for incrementing the count
     increment: (state, action) => {
-      state.count += action.payload; // Incrementing the count property in the state
+      state.count += 1; // Incrementing the count property in the state
     },
 
     // Reducer for decrementing the count
     decrement: (state, action) => {
-      state.count -= action.payload; // Decrementing the count property in the state
+      state.count -= 1; // Decrementing the count property in the state
     },
+  },
+
+  // Extra reducers are used to handle actions dispatched from other slices
+  // Here, we are adding a case for the decrement action from the counterActions slice.
+  extraReducers: (builder) => {
+    builder.addCase(counterActions.decrement, (state, action) => {
+      state.count -= 1;
+    });
   },
 });
 
